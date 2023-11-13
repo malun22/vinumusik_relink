@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     };
   }
 
-  const url = `https://maniapark.com/mod/${newId}/download?.zip`;
+  const url = `http://maniapark.com/mod/${newId}/download?.zip`;
 
   return {
     redirect: {
