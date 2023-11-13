@@ -1,5 +1,5 @@
-import { GetServerSideProps } from "next";
-import { ParsedUrlQuery } from "querystring";
+import type { GetServerSideProps } from "next";
+import type { ParsedUrlQuery } from "querystring";
 import { transferRoutes } from "tranferRoutes";
 
 interface Params extends ParsedUrlQuery {
@@ -8,9 +8,10 @@ interface Params extends ParsedUrlQuery {
 
 const FileTransferPage = () => {
   // This component doesn't need to render anything since it's used for server-side redirection.
-  return <></>;
+  return null;
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const file = (params as Params)?.filename;
 
@@ -33,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   return {
     redirect: {
       destination: url,
-      permanent: true, // Set to true for permanent redirection
+      permanent: true,
     },
   };
 };
