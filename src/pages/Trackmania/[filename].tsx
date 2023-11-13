@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   return {
     redirect: {
       destination: url,
-      permanent: true,
+      permanent: false,
     },
   };
 };
